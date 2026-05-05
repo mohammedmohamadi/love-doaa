@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>For Doaa ❤️</title>
+
+<style>
+body{
+margin:0;
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+overflow:hidden
+}
+
+h1{
+animation:glow 2s infinite alternate
+}
+
+@keyframes glow{
+from{text-shadow:0 0 10px #ff4e73}
+to{text-shadow:0 0 30px #ff004c}
+}
+
+.fade{display:none}
+
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#ff004c;
+color:white;
+cursor:pointer
+}
+
+input{
+padding:10px;
+border-radius:20px;
+border:none
+}
+
+.container{
+margin-top:80px
+}
+
+img{
+width:260px;
+border-radius:20px;
+box-shadow:0 0 20px #ff004c;
+margin:10px
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container" id="login">
+<h2>🔐 كلمة السر</h2>
+<input type="password" id="pass"><br><br>
+<button onclick="login()">دخول</button>
+<p id="error"></p>
+</div>
+
+<div class="container fade" id="step1">
+<h2>✨ يا دعاء</h2>
+<img src="https://i.imgur.com/8Km9tLL.jpg">
+<br>
+<button onclick="next('step2')">التالي</button>
+</div>
+
+<div class="container fade" id="step2">
+<h2>💭 كل مرة بشوفك...</h2>
+<img src="https://i.imgur.com/5tj6S7Ol.jpg">
+<br>
+<button onclick="next('step3')">كمّل</button>
+</div>
+
+<div class="container fade" id="step3">
+<h1>أنا بحب دعاء ❤️</h1>
+<p>مش مجرد كلام… دي حقيقة</p>
+</div>
+
+<script>
+function login(){
+if(document.getElementById("pass").value==="doda"){
+document.getElementById("login").style.display="none";
+show("step1");
+}else{
+document.getElementById("error").innerText="❌ كلمة السر غلط";
+}
+}
+
+function show(id){
+let x=document.getElementsByClassName("fade");
+for(let i=0;i<x.length;i++){x[i].style.display="none"}
+document.getElementById(id).style.display="block"
+}
+
+function next(id){show(id)}
+</script>
+
+</body>
+</html>
